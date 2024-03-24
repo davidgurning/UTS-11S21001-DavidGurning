@@ -24,11 +24,22 @@ class DetailActivity : AppCompatActivity() {
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         if (fruit != null) {
-            supportActionBar?.title = "Buah ${fruit!!.name}"
+            supportActionBar?.title = "${fruit!!.name}"
             loadData(fruit!!)
         } else {
             finish()
         }
+
+        binding.buttonviewdetail.setOnClickListener {
+            val intent = Intent(this@DetailActivity, MainActivity2::class.java)
+            intent.putExtra(MainActivity2.EXTRA_FAMILI, fruit?.name)
+            startActivity(intent)
+        }
+    }
+
+    private fun redirectToMain2Activity() {
+        val intent = Intent(this, MainActivity2::class.java)
+        startActivity(intent)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -62,6 +73,7 @@ class DetailActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
     companion object {
         const val EXTRA_FRUIT = "extra_fruit"
     }

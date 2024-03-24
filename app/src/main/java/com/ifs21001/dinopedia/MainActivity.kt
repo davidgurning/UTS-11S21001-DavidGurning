@@ -67,7 +67,8 @@ class MainActivity : AppCompatActivity() {
         for (i in dataName.indices) {
             val fruit = Fruit(dataName[i],
                 dataIcon.getResourceId(i, -1), dataDescription[i],
-                dataCharacteristic[i], dataKelompok[i], dataHabitat[i], dataMakanan[i],dataPanjang[i], dataTinggi[i], dataBobot[i], dataKelemahan[i])
+                dataCharacteristic[i], dataKelompok[i], dataHabitat[i], dataMakanan[i],dataPanjang[i], dataTinggi[i], dataBobot[i],
+                dataKelemahan[i])
             listFruit.add(fruit)
         }
         return listFruit
